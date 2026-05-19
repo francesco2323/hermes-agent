@@ -1,0 +1,38 @@
+version: 1
+
+agent:
+  name: hermes
+  default_personality: aws-architect
+  soul_file: SOUL.md
+  agents_file: AGENTS.md
+
+paths:
+  memories: memories
+  skills: skills
+  sessions: sessions
+  cron: cron
+  plugins: plugins
+  hooks: hooks
+  skins: skins
+  logs: logs
+
+behavior:
+  max_conversation_context: 24
+  summarize_old_sessions: true
+  remember_user_preferences: true
+  prefer_structured_answers: true
+  prefer_actionable_recommendations: true
+  ask_clarifying_questions_only_when_necessary: true
+
+output:
+  default_tone: calm
+  default_style: concise
+  format:
+    use_headers: true
+    use_bullets: true
+    use_tables_when_helpful: true
+
+security:
+  redact_secrets: true
+  avoid_logging_sensitive_values: true
+  require_explicit_confirmation_for_dangerous_actions: true
